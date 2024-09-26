@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 18:23:27 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/26 19:25:37 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/09/26 20:29:19 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strdup(const char *s)
 	return (real_s);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	*src;
 	char	*dest;
@@ -44,4 +44,4 @@ int	main(void)
 	free(dest);
 	free(src);
 	return (0);
-}
+}*/
