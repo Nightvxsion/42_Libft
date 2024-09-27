@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 19:30:51 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/27 14:54:19 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/09/27 20:30:15 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char *str;
 	char *substr;
@@ -48,4 +48,4 @@ int	main(void)
 	printf("Resultado de substring -> %s\n", substr);
 	free(str);
 	return (0);
-}
+}*/
