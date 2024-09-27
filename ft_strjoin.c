@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:12:33 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/27 18:00:06 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/09/27 22:49:51 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 	size_t	len;
-	
+
 	if (s1 == NULL || s2 == NULL)
-			return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2) + 1; // Total length
-	str = malloc(len * sizeof(char)); // Memory allocation for the total string
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = malloc(len * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;

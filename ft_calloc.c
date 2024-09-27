@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 20:22:03 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/25 20:45:20 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/09/27 22:43:40 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	*ft_calloc(size_t item, size_t size)
 		return (total);
 	}
 }
+
 int	main(void)
 {
 	size_t	num_item;

@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 19:30:51 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/27 20:30:15 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/09/27 22:45:14 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	real_len = ft_strlen(s);
 	str = NULL;
 	i = 0;
-
 	if (!s || (!(str = malloc(len + 1))))
 		return (NULL);
 	if (start > real_len)
