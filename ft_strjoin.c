@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:12:33 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/27 22:49:51 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/09/27 23:28:39 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	*str;
 	char	*str2;
@@ -55,4 +55,4 @@ int	main(void)
 	free(str);
 	free(str2);
 	return (0);
-}
+}*/

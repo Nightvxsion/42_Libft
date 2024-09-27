@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 20:04:30 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/26 18:15:15 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/09/27 23:28:19 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_atoi(const char *nptr)
 	return (res * sign);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	*str;
 	char	*str2;
@@ -52,4 +52,4 @@ int	main(void)
 	free(str);
 	free(str2);
 	return (0);
-}
+}*/

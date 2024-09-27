@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 20:22:03 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/27 22:43:40 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/09/27 23:28:28 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_calloc(size_t item, size_t size)
 	}
 }
 
-int	main(void)
+/*int	main(void)
 {
 	size_t	num_item;
 	size_t	size_item;
@@ -38,4 +38,4 @@ int	main(void)
 	printf("CALLOC result 1 -> %d\n CALLOC result 2 -> %d\n", arr[0], arr[1]);
 	free (arr);
 	return (0);
-}
+}*/
