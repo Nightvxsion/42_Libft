@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 18:02:45 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/27 23:28:48 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/09/28 09:48:40 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	str1 = NULL;
 	len = ft_strlen(s1);
-	if (!s1 || !set)
+	if (!s1 || !set || !str1)
 		return (NULL);
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str1);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char	*total;
 
@@ -39,4 +39,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	printf("resultado total del trim -> %s\n", total);
 	free(total);
 	return (0);
-}*/
+}
