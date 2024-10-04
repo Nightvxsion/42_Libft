@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:29:43 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/27 22:50:16 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/04 19:13:42 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 
 #endif

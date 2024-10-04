@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 07:43:41 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/03 08:14:59 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/04 19:39:15 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 
 static int	digit_count(int n)
 {
-    int i;
-	int tmp;
-	
+	int	i;
+
 	i = 0;
 	if (n == 0)
-		return (1); // Needs at least '0' char
+		return (1);
 	if (n == -2147483648)
-		return (11); // Returns the minimum number
+		return (11);
 	if (n < 0)
 	{
-		n *= -n; // Multiplies by -1 the sign
+		n = -n;
 		i++;
 	}
-	tmp = a;
-	while (tmp > 0) // while the temporary var is bigger than 0
+	while (n > 0)
 	{
-		tmp = tmp / 10; // Divides the number between 10, to get the first digit
+		n = n / 10;
 		i++;
 	}
 	return (i);
@@ -38,20 +36,54 @@ static int	digit_count(int n)
 
 static int	exp_calc(int n)
 {
-	int	a;
 	int	exp;
+	int	digits;
 
-	a = 0;
+	exp = 0;
 	if (n == 0)
-		return (1); // If the number is 0 the exp is 1
+		return (1);
 	if (n == -2147483648)
-		return (1000000000); // If it's the minimum number it returns a number in base 10^9
-	exp = digit_count(n); // How many digits have the number using the last function
-	a = 1 // Min. base 1
-	while (n < 0)
-		--digits;
-	while (--exp)
-		a = a * 10 // Calculating the base of the power of 10
+		return (1000000000);
+	digits = digit_count(n);
+	exp = 1;
+	while (--digits)
+		exp = exp * 10;
 	return (exp);
-	
 }
+
+char	*ft_itoa(int n)
+{
+	char		*str;
+	int			i;
+	int			exp;
+	long int	copy;
+
+	copy = (long int)n;
+	exp = exp_calc(n);
+	i = 0;
+	str = malloc(digit_count(n) + 1);
+	if (!str)
+		return (NULL);
+	if (n < 0)
+	{
+		str[i++] = '-';
+		copy = -copy;
+	}
+	while (exp > 0)
+	{
+		str[i++] = (copy / exp) + 48;
+		copy = copy % exp;
+		exp = exp / 10;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+/*int	main(void)
+{
+	int		min_num = 0;
+	char	*res = ft_itoa(min_num);
+	printf("Final result after ITOA -> %s\n", res);
+	free(res);
+	return (0);
+}*/

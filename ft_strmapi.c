@@ -1,69 +1,61 @@
-/******************************************************************************
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/04 18:08:27 by marcgar2          #+#    #+#             */
+/*   Updated: 2024/10/04 19:40:15 by marcgar2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <stddef.h>
+#include "libft.h"
 #include <ctype.h>
 
-static int ft_strlen(char *s)
+static char	to_upper(unsigned int index, char c)
 {
-    int i = 0;
-    while (s[i] != '\0')
-        i++;
-    return i; // Always return the exact length    
+	if (islower(c))
+		return (c - 32);
+	return (c);
 }
 
-static char to_upper(unsigned int index, char c)
+char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {
-    if(islower(c))
-        return (c - 32);
-    return c;
+	int		i;
+	char	*str;
+	int		len;
+
+	i = 0;
+	if (!s || !str)
+		return (NULL);
+	len = ft_strlen(s);
+	str = malloc(sizeof(char) * (len + 1));
+	while (i < len)
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[len] = '\0';
+	return (str);
 }
 
-char *ft_strmapi(char *s, char (*f)(unsigned int, char))
+/*int	main(void)
 {
-    int  i;
-    char *str;
-    int  len;
-    
-    i = 0;
-    if (!s || !str)
-        return (NULL);
-    len = ft_strlen(s);
-    str = malloc(sizeof(char) * (len + 1));
-    while (i < len)
-    {
-        str[i] = f(i, s[i]); // Appies the function to each element and string independently
-        i++;
-    }
-    str[len] = '\0';
-    return (str);
-}
+	char	*str;
+	char	*res;
 
-int main(void)
-{
-    char *str;
-    char *res;
-
-    str = malloc(25);
-    strcpy(str, "today is my birthday");
-    res = ft_strmapi(str, to_upper);
-    if (res)
-    {
-        printf("Original string -> %s\n", str);
-        printf("Modified string -> %s\n", res);
-        free(res);
-    }
-    else
-        printf("Algo has hecho mal broder :c\n");
-    free(str);
-    return 0;
-}
+	str = malloc(25);
+	strcpy(str, "today is my birthday");
+	res = ft_strmapi(str, to_upper);
+	if (res)
+	{
+		printf("Original string -> %s\n", str);
+		printf("Modified string -> %s\n", res);
+		free(res);
+	}
+	else
+		printf("Algo has hecho mal broder :c\n");
+	free(str);
+	return (0);
+}*/
