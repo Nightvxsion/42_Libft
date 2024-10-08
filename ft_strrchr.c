@@ -15,8 +15,8 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	unsigned int	i;
-	char		*result;
-	char		c_copy;
+	char			*result;
+	char			c_copy;
 
 	c_copy = (char)c;
 	result = NULL;
