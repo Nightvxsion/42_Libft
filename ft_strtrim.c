@@ -19,13 +19,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 
 	i = 0;
-	str1 = NULL;
+	str1 = 0;
 	len = ft_strlen(s1);
-	if (!s1 || !set || !str1)
+	if (!s1 || !set)
 		return (NULL);
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	while (len > 0 && ft_strchr(set, s1[len - 1]))
+	while (len > i && ft_strchr(set, s1[len - 1]))
 		len--;
 	str1 = ft_substr(s1, i, len - i);
 	return (str1);

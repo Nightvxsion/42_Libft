@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
 
 static char	to_upper(unsigned int index, char c)
 {
@@ -27,10 +26,12 @@ char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 	int		len;
 
 	i = 0;
-	if (!s || !str)
+	if (!s)
 		return (NULL);
 	len = ft_strlen(s);
 	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
 	while (i < len)
 	{
 		str[i] = f(i, s[i]);

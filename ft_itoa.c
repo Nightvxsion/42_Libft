@@ -39,12 +39,13 @@ static int	exp_calc(int n)
 	int	exp;
 	int	digits;
 
-	exp = 0;
 	if (n == 0)
 		return (1);
 	if (n == -2147483648)
 		return (1000000000);
 	digits = digit_count(n);
+	if (n < 0)
+		digits--;
 	exp = 1;
 	while (--digits)
 		exp = exp * 10;

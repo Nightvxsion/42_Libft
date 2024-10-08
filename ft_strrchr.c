@@ -16,6 +16,8 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char	*found_char = NULL;
 
+	if (*s == '\0')
+		return (NULL);
 	while (*s != '\0')
 	{
 		if (*s == (char)c)

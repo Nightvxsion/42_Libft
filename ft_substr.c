@@ -16,17 +16,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
-	size_t	real_len;
+	size_t	s_len;
 
-	real_len = ft_strlen(s);
-	str = NULL;
-	str = malloc(len + 1);
+	s_len = ft_strlen(s);
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (start > real_len)
+	if (start >= s_len)
 		return (ft_strdup(""));
-	if (str == NULL)
+	if (len > s_len - start)
+		len = s_len - start;
+	str = malloc(len + 1);
+	if (!str)
 		return (NULL);
 	while (i < len)
 	{

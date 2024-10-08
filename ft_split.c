@@ -19,9 +19,9 @@ static int	is_on_str(char const *s1, int c)
 
 	i = 0;
 	j = 0;
-	if (s1[i] == '\0')
+	if (*s1 == '\0')
 		return (0);
-	while (s1[i] != '\0')
+	while (*s1 != '\0')
 	{
 		if (*s1 == c)
 			j = 0;
@@ -59,7 +59,7 @@ static void	*rm_arr(char **s1, int j)
 	return (NULL);
 }
 
-static char	**jordi(char *s1, char **s, char c, int n)
+static char	**body(char *s1, char **s, char c, int n)
 {
 	int	i;
 	int	j;
@@ -69,10 +69,8 @@ static char	**jordi(char *s1, char **s, char c, int n)
 	j = 0;
 	while (s1[i] != '\0' && j < n)
 	{
-		if (s1[i] == c)
+		while (s1[i] == c)
 			i++;
-		if (s1[i] == '\0')
-			break ;
 		s[j] = (char *)malloc(sizeof(char) * (total_length(s1, c, i) + 1));
 		if (s[j] == NULL)
 			return (rm_arr(s, j));
@@ -97,7 +95,7 @@ char	**ft_split(char const *s, char c)
 	destino = (char **)malloc(sizeof(char *) * (n + 1));
 	if (destino == NULL)
 		return (NULL);
-	return (jordi((char *)s, destino, c, n));
+	return (body((char *)s, destino, c, n));
 }
 
 /*int	main(void)
