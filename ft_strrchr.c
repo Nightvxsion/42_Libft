@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 14:05:40 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/21 20:21:27 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/08 19:07:55 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*found_char = NULL;
+	unsigned int	i;
+	char		*result;
+	char		c_copy;
 
-	if (*s == '\0')
-		return (NULL);
-	while (*s != '\0')
+	c_copy = (char)c;
+	result = NULL;
+	i = 0;
+	while (s[i])
 	{
-		if (*s == (char)c)
-			found_char = s;
-		s++;
+		if (s[i] == c_copy)
+			result = (char *)&s[i];
+		i++;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return ((char *)found_char);
+	if (s[i] == c_copy)
+		return ((char *)&s[i]);
+	return (result);
 }
 
 /*int	main(void)
